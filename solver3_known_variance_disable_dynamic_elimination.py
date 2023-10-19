@@ -100,10 +100,10 @@ class Procedure:
                     mu_tmp = mu_bar + self.delta
                 else:
                     mu_tmp = mu_bar
-                ll -= -(self.sample_sqtot_n0[i] - 2 * self.sample_total_n0[i] * self.mu_hat_curr[i] +
-                        self.sample_count_n0[i] * self.mu_hat_curr[i] ** 2) / self.std ** 2 / 2
-                ll += -(self.sample_sqtot_n0[i] - 2 * self.sample_total_n0[i] * mu_tmp +
-                        self.sample_count_n0[i] * mu_tmp ** 2) / self.std ** 2 / 2
+                ll -= -(self.sample_sqtot_n0[j] - 2 * self.sample_total_n0[j] * self.mu_hat_curr[j] +
+                        self.sample_count_n0[j] * self.mu_hat_curr[j] ** 2) / self.std ** 2 / 2
+                ll += -(self.sample_sqtot_n0[j] - 2 * self.sample_total_n0[i] * mu_tmp +
+                        self.sample_count_n0[j] * mu_tmp ** 2) / self.std ** 2 / 2
 
         self.ll_unique[i] = ll
 
